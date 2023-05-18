@@ -1,0 +1,85 @@
+﻿@model _19T1021035.DomainModels.Customer
+@using _19T1021035.Web.codes
+@{
+}
+<div class="box box-primary">
+    <div class="box-body">
+        <form class="form-horizontal" action="~/Customer/Save" method="post">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.CustomerID)
+            @Html.ValidationSummary("", new { @style = "coler:@f00" })
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="CustomerName">Tên khách hàng:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.CustomerName,
+                       new { @class = "form-control", @placeholder = "Nhập tên khách hàng", @autufocus = "autufocus" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="ContactName">Tên giao dịch:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.ContactName,
+                       new { @class = "form-control", @placeholder = "Nhập tên giao dịch", @autufocus = "autufocus" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Country">Quốc gia:</label>
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(m => m.Country,
+                                           SelectListHelper.Countries(),
+                                           new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="City">Thành phố:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="City" name="City" placeholder="Nhập thành phố" value="@Model.City">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Address">Địa chỉ:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Address" name="Address" placeholder="Nhập địa chỉ" value="@Model.Address">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="PostalCode">Mã bưu chính:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="PostalCode" name="PostalCode" placeholder="Nhập mã bưu chính" value="@Model.PostalCode">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Nhập email" value="@Model.Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Password">Mật khẩu:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Password" name="Password" placeholder="Nhập mã bưu chính" value="@Model.Password">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-floppy-disk"></i> Lưu dữ liệu
+                    </button>
+                    <a href="~/Customer" class="btn btn-warning">
+                        <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                        Quay lại
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

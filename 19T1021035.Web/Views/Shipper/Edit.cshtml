@@ -1,0 +1,45 @@
+﻿@model _19T1021035.DomainModels.Shipper
+@{
+}
+
+<div class="box box-primary">
+    <div class="box-body">
+        <form class="form-horizontal" action="~/Shipper/Save" method="post">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.ShipperID)
+            @Html.ValidationSummary("", new { @style = "coler:@f00" })
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="shipperName">Tên người giao hàng:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.ShipperName,
+                        new { @class = "form-control", @placeholder = "Nhập tên người giao hàng", @autufocus = "autufocus" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="phone">
+                    Số điện thoại:
+                </label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.Phone,
+                        new { @class = "form-control", @placeholder = "Nhập số điện thoại", @autufocus = "autufocus" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                        Lưu dữ liệu
+                    </button>
+
+                    <a href="~/shipper" class="btn btn-warning">
+                        <i class="glyphicon glyphicon-log-out"></i>
+                        Quay lại
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

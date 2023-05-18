@@ -1,0 +1,11 @@
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\bin\Debug\19T1021035.BusinessLayers.dll
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\bin\Debug\19T1021035.BusinessLayers.pdb
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\bin\Debug\19T1021035.DataLayers.dll
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\bin\Debug\19T1021035.DomainModels.dll
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\bin\Debug\19T1021035.DataLayers.pdb
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\bin\Debug\19T1021035.DomainModels.pdb
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\obj\Debug\19T1021035.BusinessLayers.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\obj\Debug\19T1021035.BusinessLayers.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\obj\Debug\19T1021035.BusinessLayers.csproj.CopyComplete
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\obj\Debug\19T1021035.BusinessLayers.dll
+C:\Users\PC\Desktop\hoc Tren Lop\lapTrinhWeb\19T1021035\19T1021035.BusinessLayers\obj\Debug\19T1021035.BusinessLayers.pdb

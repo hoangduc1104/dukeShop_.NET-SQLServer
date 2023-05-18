@@ -1,0 +1,82 @@
+﻿@model _19T1021035.Web.Models.ProductSearchInput
+@using _19T1021035.Web.codes
+ 
+
+@{
+    ViewBag.Title = "Quản Lý Mặt Hàng";
+}
+
+
+<div class="container-fluid box box-primary">
+    <div class="box-header">
+    </div>
+    <div class="box-body">
+        <form id="formSearch" action="~/product/search">
+            <div class="row">
+                <div class="col-sm-3">
+                    @Html.DropDownListFor(m => m.CategoryID,
+                                        SelectListHelper.Category(),
+                                        new { @class = "form-control", @name = "category" })
+                </div>
+                <div class="col-sm-3">
+                    @Html.DropDownListFor(m => m.SupplierID,
+                                         SelectListHelper.Supplier(),
+                                         new { @class = "form-control", @name ="supplier" })
+                </div>
+                <div class="col-sm-6 input-group">
+                    <input type="hidden" name="PageSize" value="@Model.PageSize" />
+                    <input type="text" name="searchValue"
+                           class="form-control"
+                           placeholder="Nhập từ khóa cần tìm." value="@Model.SearchValue">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat btn-info">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <a href="~/product/create"
+                           class="btn btn-flat btn-primary"
+                           style="margin-left:5px;">
+                            <i class="fa fa-plus"></i> Bổ sung
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div id="searchResult"></div>
+
+</div>
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#formSearch").submit(function (e) {
+                e.preventDefault();
+                doSearch(1);
+                return;
+            });
+            doSearch(@Model.Page);
+        })
+        function doSearch(page) {
+            var url = $("#formSearch").prop("action");
+            var postData = $("#formSearch").serializeArray();
+            postData.push({ "name": "page", "value": page });
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: postData,
+                error: function () {
+                    alert("Your request is not valid!");
+                },
+                success: function (data) {
+                    $("#searchResult").html(data);
+                }
+            });
+
+            return;
+        }
+    </script>
+}

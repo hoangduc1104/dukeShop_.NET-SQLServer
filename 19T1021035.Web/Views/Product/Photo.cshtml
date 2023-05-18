@@ -1,0 +1,73 @@
+﻿@model _19T1021035.DomainModels.ProductPhoto
+@using _19T1021035.Web.codes
+@{
+
+}
+
+<div class="box box-primary">
+    <div class="box-header with-border ">
+    </div>
+
+    <div class="box-body">
+        <form class="form-horizontal" action="~/Product/SavePhoto" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.PhotoID)
+            @Html.ValidationSummary("", new { @style = "coler:@f00" })
+
+            @Html.HiddenFor(m => m.ProductID)
+            @Html.ValidationSummary("", new { @style = "coler:@f00" })
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="photo">Photo:</label>
+                <div class="col-sm-10">
+                    <img id="photo-img1" src="~/Photos/products/@Model.Photo" class="profile-user-img" alt="Ảnh" style="width:60px; height:40px;">
+                    <input class="form-control" id="photo1" name="uploadPhoto" placeholder="Enter Photo" type="file" value="@Model.Photo"
+                           onchange="document.getElementById('photo-img1').src = window.URL.createObjectURL(this.files[0])">
+                    @Html.HiddenFor(data => data.Photo)
+                    @Html.ValidationMessageFor(m => m.Photo, "", new
+                    {
+                        @class = "text-danger"
+                    })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Mô tả:</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.Description,
+                        new { @class = "form-control", @placeholder = "Nhập Phần mô tả", @autufocus = "autufocus" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Thứ tự hiển thị:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="DisplayOrder" autofocus value="@Model.DisplayOrder">
+                    @* @Html.ValidationMessageFor(m => m.DisplayOrder, ""
+                )*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-sm-10 checkbox">
+                    <label><input type="checkbox" name="IsHidden" value="@Model.IsHidden">Ẩn ảnh (không hiển thị với khách hàng)</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Lưu dữ liệu
+                    </button>
+                    <a class="btn btn-warning" href="~/product/edit/@Model.ProductID">
+                        <i class="fa fa-ban"></i> Quay lại
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="box-footer text-center">
+    </div>
+
+</div>
+

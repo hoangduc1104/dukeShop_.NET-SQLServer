@@ -1,0 +1,44 @@
+﻿<div class="row" style="margin-top: 12px">
+    @foreach (var employee in Model.Data)
+    {
+<div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="box box-primary" style="padding: 8px; position: relative">
+        <div class="row">
+            <div class="col-sm-5">
+                <img src="Photos/@employee.Photo" alt="staff" style="width: 100%; height: 120px; object-fit: cover">
+            </div>
+            <div class="col-sm-7">
+                <div class="">
+                    <i class="glyphicon glyphicon-user"></i>
+                    @employee.FirstName @employee.LastName
+                </div>
+                <div>
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    @employee.Email
+                </div>
+                <div>
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    @employee.BirthDate.ToString("dd/MM/yyyy")
+                </div>
+            </div>
+        </div>
+        <p style="margin-top: 12px; font-style: italic; height: 87px">
+            <span>Note:</span>
+            <span style="display: -webkit-box;
+                                           -webkit-line-clamp: 3;
+                                           -webkit-box-orient: vertical;
+                                           overflow: hidden;">
+                @employee.Notes
+            </span>
+        </p>
+    </div>
+    <div style="position: absolute; top: 8px; right: 16px ">
+        <a href="~/staff/edit?id=@employee.EmployeeID" class="text-info" title="Edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a href="~/staff/delete?id=@employee.EmployeeID" class="text-danger" title="Remove" style="margin-left: 6px">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+    </div>
+</div>}
+</div>
